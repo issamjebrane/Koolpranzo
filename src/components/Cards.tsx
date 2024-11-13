@@ -25,10 +25,10 @@ const fraunces = Fraunces({
           delay: index * 0.2,  // Stagger effect based on card index
           ease: [0.25, 0.1, 0.25, 1]  // Custom easing for smoother motion
         }}
-        className='relative h-96 w-96 bg-[#223515] rounded-xl overflow-hidden'
+        className='relative h-[600px] w-[500px] bg-[#223515] rounded-xl overflow-hidden'
       >
         {/* Image container taking up top portion */}
-        <div className="relative h-1/2 w-full">
+        <div className="relative h-2/3 w-full">
           <Image
             src={card.imgSrc}
             alt={card.title}
@@ -80,7 +80,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className=" flex items-center justify-center flex-col gap-10 py-10" >
+    <div className=" flex items-center justify-center flex-col gap-10 py-10" id='menu'>
         <h1 className={'text-6xl '+ fraunces.className } >Menu</h1>
         <div className='grid grid-cols-3 gap-10'>
         {

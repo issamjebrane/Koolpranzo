@@ -40,7 +40,7 @@ const Hero = () => {
       asChild
       className="bg-[#223515] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#94AB71]"
     >
-      <Link href="#custom-brunch">View Menu</Link>
+      <Link href="#menu">View Menu</Link>
     </Button>
   </motion.button>
   {/* Images with Animation */}

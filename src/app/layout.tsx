@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter , Montserrat, Fraunces} from 'next/font/google'
 import './globals.css'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({

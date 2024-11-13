@@ -81,6 +81,9 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 .main{
   background-image: url(../../public//assets/desktop.png);
