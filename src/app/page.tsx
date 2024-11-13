@@ -23,7 +23,7 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <main>
         <header className={`
@@ -31,8 +31,8 @@ export default function Home() {
         transition-all duration-300 ease-in-out
         px-20
         ${isScrolled 
-          ? 'bg-white shadow-md text-[#223515]' 
-          : 'bg-transparent text-white'}
+          ? 'bg-secondary_color shadow-md text-primary_color' 
+          : 'bg-transparent text-secondary_color'}
       `}>
         <div className="py-4 flex  justify-between items-center">
           <Link href="/">
@@ -40,14 +40,14 @@ export default function Home() {
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-bold text-lg ">
-            <Link href="#about"  className="hover:border-b-[#223515] border-2 border-transparent">About</Link>
-            <Link href="#menu" className="hover:border-b-[#223515] border-2 border-transparent">Menu</Link>
-            <Link href="#contact" className="hover:border-b-[#223515] border-2 border-transparent">Contact</Link>
+            <Link href="#about"  className="hover:border-b-primary_color border-2 border-transparent">About</Link>
+            <Link href="#menu" className="hover:border-b-primary_color border-2 border-transparent">Menu</Link>
+            <Link href="#contact" className="hover:border-b-primary_color border-2 border-transparent">Contact</Link>
           </nav>
 
           <Button
             asChild
-            className="bg-[#223515] text-white px-4 py-2 rounded-full font-semibold  hover:bg-[#94AB71]"
+            className="bg-primary_color text-secondary_color hover:text-primary_color px-4 py-2 rounded-full font-semibold  hover:bg-secondary_color"
           >
             <Link href="#custom-brunch">Make Your Own</Link>
           </Button>

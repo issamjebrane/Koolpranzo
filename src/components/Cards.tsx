@@ -1,8 +1,10 @@
 'use client'
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Fraunces } from 'next/font/google';
 
 import Image from 'next/image';
+
 const fraunces = Fraunces({
     subsets : ['latin'],
     weight: ['400', '600'],
@@ -25,7 +27,7 @@ const fraunces = Fraunces({
           delay: index * 0.2,  // Stagger effect based on card index
           ease: [0.25, 0.1, 0.25, 1]  // Custom easing for smoother motion
         }}
-        className='relative h-[600px] w-[500px] bg-[#223515] rounded-xl overflow-hidden'
+        className='relative 2xl:h-[600px] 2xl:w-[400px] lg:max-h-fit lg:w-[300px] text-primary_color rounded-xl'
       >
         {/* Image container taking up top portion */}
         <div className="relative h-2/3 w-full">
@@ -40,7 +42,7 @@ const fraunces = Fraunces({
   
         {/* Content container */}
         <motion.div 
-          className="p-6 text-white"
+          className="p-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ 
@@ -49,7 +51,8 @@ const fraunces = Fraunces({
           }}
         >
           <h5 className="text-xl font-semibold mb-3">{card.title}</h5>
-          <p className="text-gray-300">{card.description}</p>
+          <p className="text-primary_color">{card.description}</p>
+          <button className='text-primary_color font-extralight mt-4 flex items-center justify-center'>Order now <ArrowRight className='h-5 w-6'/></button>
         </motion.div>
       </motion.div>
     );
@@ -80,7 +83,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className=" flex items-center justify-center flex-col gap-10 py-10" id='menu'>
+    <div className=" flex items-center justify-center flex-col gap-10 py-10 bg-secondary_color" id='menu'>
         <h1 className={'text-6xl '+ fraunces.className } >Menu</h1>
         <div className='grid grid-cols-3 gap-10'>
         {
