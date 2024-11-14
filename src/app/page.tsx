@@ -29,7 +29,7 @@ export default function Home() {
         <header className={`
         fixed top-0 left-0 right-0 z-50
         transition-all duration-300 ease-in-out
-        px-20
+        xl:px-20 px-6
         ${isScrolled 
           ? 'bg-secondary_color shadow-md text-primary_color' 
           : 'bg-transparent text-secondary_color'}
@@ -53,7 +53,7 @@ export default function Home() {
           </Button>
         </div>
       </header>
-      <section className="bg-cover bg-center px-24 bg-no-repeat  main">
+      <section className="bg-cover bg-center md:px-24 bg-no-repeat  2xl:bg-desktop xl:bg-mini-desktop bg-mobile">
         <Hero/>
       </section>
       <Cards/>

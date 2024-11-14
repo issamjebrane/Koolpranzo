@@ -11,7 +11,11 @@ const config: Config = {
   	extend: {
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			  'desktop': "url('/assets/desktop.png')",
+			  'mini-desktop': "url('/assets/mini_desktop.png')",
+			  'tablet': "url('/assets/tablet.png')",
+			  'mobile': "url('/assets/mobile.png')",
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

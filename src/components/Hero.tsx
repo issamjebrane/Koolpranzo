@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
 
-<section className="flex flex-col items-left justify-center  min-h-screen px-6 font-medium">
+<section className="flex flex-col  md:items-left justify-center  min-h-screen px-6 font-medium">
   {/* Animated Heading */}
   <motion.h1
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8}}
-    className="text-4xl md:text-6xl font-bold text-white"
+    className="text-5xl md:text-6xl font-bold text-white"
   >
     Wholesome Goodness, <br/>
     Homemade with <i className="font-normal">
@@ -25,7 +25,7 @@ const Hero = () => {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.3, duration: 0.8 }}
-    className="text-lg md:text-xl mt-4 max-w-2xl text-[#426030] font-medium"
+    className="text-lg md:text-xl mt-4 max-w-2xl text-white font-medium"
   >
     Indulge in our handcrafted brunch boxes, packed with fresh pastries 
     and seasonal delights. A perfect slice of happiness delivered to you.
@@ -38,7 +38,7 @@ const Hero = () => {
     >
   <Button
       asChild
-      className="bg-[#223515] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#94AB71]"
+      className="bg-[#223515] text-white px-4 w-44 md:py-2 rounded-full font-semibold hover:bg-[#94AB71]"
     >
       <Link href="#menu">View Menu</Link>
     </Button>

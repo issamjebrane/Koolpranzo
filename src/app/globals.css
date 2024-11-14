@@ -85,6 +85,16 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
+@media (max-width: 1240px) {
+  .main {
+    background-image: url(/assets/mini_desktop.png);
+
+  }
+}
+
 .main{
-  background-image: url(../../public//assets/desktop.png);
+  background-image: url(/assets/desktop.png);
 }
