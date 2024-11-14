@@ -10,7 +10,7 @@ const fraunces = Fraunces({
     subsets : ['latin'],
     weight: ['400', '600'],
   })
-
+  //@ts-ignore
   const Card = ({ card , index }) => {
     return (
       <motion.div
@@ -119,6 +119,7 @@ const cardVariants = {
       opacity: 0,
       y: 50
     },
+      //@ts-ignore
     onscreen: (index) => ({
       opacity: 1,
       y: 0,
@@ -132,6 +133,7 @@ const cardVariants = {
   };
   
   // Alternative Card with spring animation
+    //@ts-ignore
   const SpringCard = ({ card, index }) => {
     return (
       <motion.div
