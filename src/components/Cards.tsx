@@ -14,47 +14,65 @@ const fraunces = Fraunces({
   const Card = ({ card , index }) => {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ 
-          opacity: 1, 
-          y: 0,
-        }}
-        viewport={{ 
-          once: true,
-          margin: "-100px"  // Starts animation slightly before card enters viewport
-        }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ 
+        opacity: 1, 
+        y: 0,
+      }}
+      viewport={{ 
+        once: true,
+        margin: "-100px"
+      }}
+      transition={{ 
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      className="relative w-full max-w-sm mx-auto rounded-xl overflow-hidden  "
+    >
+      {/* Image Carousel */}
+      <Carousel className="w-full">
+        <CarouselContent>
+          {card.imgSrcs.map((imgSrc:string, imgIndex:number) => (
+            <CarouselItem key={imgIndex}>
+              <div className="relative group">
+                {/* Image container with consistent aspect ratio */}
+                <div className="relative pt-[95%] overflow-hidden"> {/* 4:3 aspect ratio */}
+                  <img
+                    src={imgSrc}
+                    alt={`${card.title} - Image ${imgIndex + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                  />
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      {/* Content container */}
+      <motion.div 
+        className="p-4 md:p-6"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ 
-          duration: 0.8,
-          delay: index * 0.2,  // Stagger effect based on card index
-          ease: [0.25, 0.1, 0.25, 1]  // Custom easing for smoother motion
+          duration: 0.5, 
+          delay: (index * 0.2) + 0.3
         }}
-        className='relative 2xl:h-[600px] 2xl:w-[400px] max-h-fit text-primary_color rounded-xl'
       >
-        {/* Image container taking up top portion */}
-        <div className="aspect-w-16 aspect-h-9 w-full">
-        <img
-            src={card.imgSrc}
-            alt={card.title}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-  
-        {/* Content container */}
-        <motion.div 
-          className="2xl:p-6 p-2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.5, 
-            delay: (index * 0.2) + 0.3  // Slightly delayed after card appears
-          }}
-        >
-          <h5 className="2xl:text-xl font-semibold mb-3">{card.title}</h5>
-          <p className="2xl:text-lg text-sm text-primary_color">{card.description}</p>
-          <button className='text-primary_color font-extralight mt-4 flex items-center justify-center'>Order now <ArrowRight className='h-5 w-6'/></button>
-        </motion.div>
+        <h5 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">
+          {card.title}
+        </h5>
+        <p className="text-sm md:text-base text-gray-600 mb-4">
+          {card.description}
+        </p>
+        <button className="flex items-center space-x-2 text-sm md:text-base font-medium text-primary_color hover:text-primary_color/80 transition-colors">
+          <span>Order now</span>
+          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+        </button>
       </motion.div>
-    );
+    </motion.div>
+  );
   };
 
 export default function Cards() {
@@ -62,27 +80,43 @@ export default function Cards() {
 
   const cards = [
     {
-      title: 'KALE CAESAR',
+      title: 'Koolpranzo box',
       description:
         'Roasted chicken, tomatoes, parmesan crisps, shaved parmesan, shredded kale, chopped romaine, lime squeeze, caesar',
-      imgSrc: '/assets/brunch.avif',
+        imgSrcs: [
+          '/assets/koolpranzo_box.jpg',
+          '/assets/image1.jpg',
+          '/assets/image2.jpg',
+          '/assets/image3.jpg',
+          '/assets/image4.jpg',
+        ],
     },
     {
-      title: 'GUACAMOLE GREENS',
+      title: 'Koolpranzo box',
       description:
         'Roasted chicken, avocado, tomatoes, pickled onions, shredded cabbage, tortilla chips, spring mix, chopped romaine, lime squeeze, lime cilantro jalapeño vinaigrette',
-        imgSrc: '/assets/brunch.avif',
-    },
+        imgSrcs: [
+          '/assets/koolpranzo_box2.jpg',
+          '/assets/image6.jpg',
+          '/assets/image2.jpg',
+          '/assets/image3.jpg',
+          '/assets/image4.jpg',
+        ],      },
     {
       title: 'BUFFALO CHICKEN',
       description:
         'Blackened chicken, pickled onions, tomatoes, raw carrots, cilantro, blue cheese, za’atar breadcrumbs, shredded kale, chopped romaine, sweetgreen hot sauce, caesar',
-        imgSrc: '/assets/brunch.avif',
-    },
+        imgSrcs: [
+          '/assets/koolpranzo_box.jpg',
+          '/assets/image1.jpg',
+          '/assets/image2.jpg',
+          '/assets/image3.jpg',
+          '/assets/image4.jpg',
+        ],      },
   ];
 
   return (
-    <div className=" flex items-center justify-center flex-col gap-10 py-10 bg-secondary_color" id='menu'>
+    <div className=" flex items-center justify-center overflow-hidden flex-col gap-10 py-10 bg-secondary_color" id='menu'>
         <h1 className={'text-6xl '+ fraunces.className } >Menu</h1>
         <div className='md:grid grid-cols-3 gap-10 hidden p-10 2xl:px-40'>
         {
@@ -91,15 +125,22 @@ export default function Cards() {
             ))
         }
         </div>
-        <Carousel className='md:hidden p-10'>
+        <Carousel className='md:hidden p-10 '>
           <CarouselContent>
             {
               cards.map((card,index)=>(
                   <CarouselItem className=''>
-                      <div className="aspect-w-16 aspect-h-9 w-full">
-                        <img src={card.imgSrc} className='w-full h-full object-cover'/>
+                      <div className="relative group">
+                        {/* Image container with consistent aspect ratio */}
+                        <div className="relative pt-[95%] overflow-hidden"> {/* 4:3 aspect ratio */}
+                          <img
+                            src={card.imgSrcs[0]}
+                            alt={card.title}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                          />
+                        </div>
                       </div>
-                      <div className='mt-10'>
+                      <div className='mt-10 flex flex-col items-start justify-center'>
                         <h5 className="text-xl font-semibold mb-3">{card.title}</h5>
                         <p className="text-primary_color">{card.description}</p>
                         <button className='text-primary_color font-extralight mt-4 flex items-center justify-center'>

@@ -31,7 +31,7 @@ const Nav = ({pageName}: {pageName:string}) => {
       `}>
         <div className="py-4 flex  justify-between items-center">
           <Link href="/">
-            <Image src="/assets/logo.png" alt="Logo" width={50} height={50} className="rounded-full"/>
+            <Image src="/assets/LOGO_KOOLPR.svg" alt="Logo" width={100} height={100} className="rounded-full"/>
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-bold text-lg ">
@@ -46,7 +46,7 @@ const Nav = ({pageName}: {pageName:string}) => {
                   ? 'bg-secondary_color hover:bg-primary_color hover:text-secondary_color text-primary_color' 
                   : 'bg-primary_color text-secondary_color hover:text-primary_color'
               }`}          >
-            <Link href="#custom-brunch">Make Your Own</Link>
+            <Link href="custom">Make Your Own</Link>
           </Button>
         </div>
       </header>
