@@ -2,9 +2,10 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Fraunces } from 'next/font/google';
-
+import Link from 'next/link';
 import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import { boxes } from '@/data/box';
 
 const fraunces = Fraunces({
     subsets : ['latin'],
@@ -66,54 +67,23 @@ const fraunces = Fraunces({
         <p className="text-sm md:text-base text-gray-600 mb-4">
           {card.description}
         </p>
+        <Link href={`/order/${card.id}`}>
         <button className="flex items-center space-x-2 text-sm md:text-base font-medium text-primary_color hover:text-primary_color/80 transition-colors">
           <span>Order now</span>
           <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
         </button>
+        </Link>
       </motion.div>
     </motion.div>
   );
   };
+  
+  const cards = boxes;
 
 export default function Cards() {
 
 
-  const cards = [
-    {
-      title: 'Koolpranzo box',
-      description:
-        'Roasted chicken, tomatoes, parmesan crisps, shaved parmesan, shredded kale, chopped romaine, lime squeeze, caesar',
-        imgSrcs: [
-          '/assets/koolpranzo_box.jpg',
-          '/assets/image1.jpg',
-          '/assets/image2.jpg',
-          '/assets/image3.jpg',
-          '/assets/image4.jpg',
-        ],
-    },
-    {
-      title: 'Koolpranzo box',
-      description:
-        'Roasted chicken, avocado, tomatoes, pickled onions, shredded cabbage, tortilla chips, spring mix, chopped romaine, lime squeeze, lime cilantro jalapeño vinaigrette',
-        imgSrcs: [
-          '/assets/koolpranzo_box2.jpg',
-          '/assets/image6.jpg',
-          '/assets/image2.jpg',
-          '/assets/image3.jpg',
-          '/assets/image4.jpg',
-        ],      },
-    {
-      title: 'BUFFALO CHICKEN',
-      description:
-        'Blackened chicken, pickled onions, tomatoes, raw carrots, cilantro, blue cheese, za’atar breadcrumbs, shredded kale, chopped romaine, sweetgreen hot sauce, caesar',
-        imgSrcs: [
-          '/assets/koolpranzo_box.jpg',
-          '/assets/image1.jpg',
-          '/assets/image2.jpg',
-          '/assets/image3.jpg',
-          '/assets/image4.jpg',
-        ],      },
-  ];
+
 
   return (
     <div className=" flex items-center justify-center overflow-hidden flex-col gap-10 py-10 bg-secondary_color" id='menu'>
@@ -125,32 +95,41 @@ export default function Cards() {
             ))
         }
         </div>
-        <Carousel className='md:hidden p-10 '>
-          <CarouselContent>
-            {
-              cards.map((card,index)=>(
-                  <CarouselItem className=''>
-                      <div className="relative group">
-                        {/* Image container with consistent aspect ratio */}
-                        <div className="relative pt-[95%] overflow-hidden"> {/* 4:3 aspect ratio */}
-                          <img
-                            src={card.imgSrcs[0]}
-                            alt={card.title}
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
-                          />
-                        </div>
-                      </div>
-                      <div className='mt-10 flex flex-col items-start justify-center'>
-                        <h5 className="text-xl font-semibold mb-3">{card.title}</h5>
-                        <p className="text-primary_color">{card.description}</p>
-                        <button className='text-primary_color font-extralight mt-4 flex items-center justify-center'>
-                          Order now <ArrowRight className='h-5 w-6'/></button>
-                      </div>
-                  </CarouselItem>
-              ))
-            }
-          </CarouselContent>
-    </Carousel>
+        <Carousel className="w-full p-4 md:hidden">
+        <CarouselContent>
+          {cards.map((card, index) => (
+            <CarouselItem key={index}>
+              <div className="flex flex-col space-y-4">
+                {/* Image Container */}
+                <div className="relative aspect-square w-full overflow-hidden  bg-gray-100">
+                  <img
+                    src={card.imgSrcs[0]}
+                    alt={card.title}
+                    className="absolute inset-0 h-full w-full object-contain"
+                  />
+                </div>
+                
+                {/* Content */}
+                <div className="flex flex-col space-y-2">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 line-clamp-2">
+                    {card.description}
+                  </p>
+                  <Link 
+                    href={`/order/${card.id}`}
+                    className="inline-flex items-center text-sm font-medium text-primary_color"
+                  >
+                    Order now <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+      </Carousel>
     </div>
   );
 }
