@@ -30,11 +30,11 @@ const Order = ({ params }: OrderPageProps) => {
   return (
    <>
    <Nav pageName='contact'/>
-    <div className="min-h-screen  pt-32 bg-primary_color">
+    <div className="min-h-screen pt-32 bg-primary_color">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-12">
           {/* Main Image Section */}
-          <div className="w-full lg:w-1/2 space-y-4">
+          <div className="w-full lg:w-1/3 space-y-4">
             {/* Main Image */}
             <div 
               className="aspect-square relative rounded-xl overflow-hidden  shadow-lg cursor-pointer"
@@ -79,12 +79,8 @@ const Order = ({ params }: OrderPageProps) => {
             <div className="text-2xl font-semibold text-white">
               {orderDetails.price} Dh
             </div>
-          </div>
-        </div>
-
-        {/* Order Methods Section */}
+                    {/* Order Methods Section */}
         <div className="space-y-8 ">
-          <h2 className="text-2xl text-white font-semibold text-center">Choose How to Order</h2>
           
           <div className="grid md:grid-cols-2 gap-6 ">
             {/* Social Media Order Card */}
@@ -145,6 +141,11 @@ const Order = ({ params }: OrderPageProps) => {
           </div>
         </div>
       </div>
+          </div>
+          
+        </div>
+
+
 
       {/* Image Zoom Dialog */}
       <Dialog open={isZoomed} onOpenChange={setIsZoomed}>
