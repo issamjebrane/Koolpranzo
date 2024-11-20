@@ -44,9 +44,10 @@ const Nav = ({pageName}: {pageName:string}) => {
             className={`bg-primary_color text-secondary_color hover:text-primary_color px-4 py-2 rounded-full font-semibold ${
                 pageName === 'contact' 
                   ? 'bg-secondary_color hover:bg-primary_color hover:text-secondary_color text-primary_color' 
-                  : 'bg-primary_color text-secondary_color hover:text-primary_color'
+                  : pageName === 'costum' 
+                  ? 'hidden' :'bg-primary_color text-secondary_color hover:text-primary_color'
               }`}          >
-            <Link href="custom">Make Your Own</Link>
+            <Link href="custom">Personnalisez</Link>
           </Button>
         </div>
       </header>
