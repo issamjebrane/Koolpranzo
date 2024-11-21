@@ -29,7 +29,7 @@ const fraunces = Fraunces({
         delay: index * 0.2,
         ease: [0.25, 0.1, 0.25, 1]
       }}
-      className="relative w-full max-w-sm mx-auto rounded-xl overflow-hidden  "
+      className="relative w-full max-w-md mx-auto rounded-xl overflow-hidden  "
     >
       {/* Image Carousel */}
       <Carousel className="w-full">
@@ -65,7 +65,7 @@ const fraunces = Fraunces({
           {card.title}
         </h5>
         <p className="text-sm md:text-base text-gray-600 mb-4">
-          {card.description}
+          {card.subtitle}
         </p>
         <Link href={`/order/${card.id}`}>
         <button className="flex items-center space-x-2 text-sm md:text-base font-medium text-primary_color hover:text-primary_color/80 transition-colors">
@@ -88,7 +88,7 @@ export default function Cards() {
   return (
     <div className=" flex items-center justify-center overflow-hidden flex-col gap-10 py-10 bg-secondary_color" id='menu'>
         <h1 className={'text-6xl '+ fraunces.className } >Menu</h1>
-        <div className='md:grid grid-cols-3 gap-10 hidden p-10 2xl:px-40'>
+        <div className='md:grid grid-cols-2 gap-10 hidden p-10 2xl:px-40'>
         {
             cards.map((card,index)=>(
                 <Card key={index} card={card} index={index} />
@@ -115,7 +115,7 @@ export default function Cards() {
                     {card.title}
                   </h3>
                   <p className="text-sm text-gray-500 line-clamp-2">
-                    {card.description}
+                    {card.subtitle}
                   </p>
                   <Link 
                     href={`/order/${card.id}`}

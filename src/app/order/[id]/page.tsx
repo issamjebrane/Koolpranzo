@@ -57,7 +57,7 @@ const Order = ({ params }: OrderPageProps) => {
   
     try {
       await emailjs.send(
-        'service_amz575k',
+        'service_tdzwmbg',
         'template_gxdzddd',
         {
           to_name: 'issam jebrane', 
@@ -157,40 +157,39 @@ const Order = ({ params }: OrderPageProps) => {
           <div className="w-full lg:w-1/2 space-y-6">
             <h1 className="text-3xl font-bold text-white">{orderDetails.title}</h1>
             <div className='text-white'>
-              <p className="flex items-start gap-2">
-                <span>🥪</span> 
-                <span><strong>Toast de Blé Complet avec Dinde Fumé</strong><br/>
-                Pain complet grillé garni de dinde fumée, laitue fraîche, fromage, tomate et œuf.</span>
-              </p>
-              
-              <p className="flex items-start gap-2">
-                <span>🥣</span>
-                <span><strong>Bol de Flocons d'Avoine</strong> (Notre recette spéciale)<br/>
-                Un bol de flocons d'avoine garni de fruits frais, fruits secs, chocolat noir, yaourt nature, poudre de noix de coco et graines de chia. Servi froid et prêt à savourer.</span>
-              </p>
-              
-              <p className="flex items-start gap-2">
-                <span>🥤</span>
-                <span><strong>Jus Détox Naturel</strong><br/>
-                Un jus détox rafraîchissant préparé avec des ingrédients frais et naturels.</span>
-              </p>
-              
-              <p className="flex items-start gap-2">
-                <span>🥞</span>
-                <span><strong>Pancakes à l'Avoine et à la Banane</strong><br/>
-                Pancakes moelleux à base de flocons d'avoine et de banane, servis avec des garnitures naturelles sans sucre ajouté.</span>
-              </p>
-              
-              <p className="flex items-start gap-2">
-                <span>🍪</span>
-                <span>Biscuits de Blé Complet</span>
-              </p>
-              
-              <p className="flex items-start gap-2">
-                <span>🫖</span>
-                <span>Thé Naturel avec Sucre Brun</span>
-              </p>
-            </div>
+                {orderDetails.description.map((item,index) => (
+                  <p key={index} className="flex items-start gap-2">
+                    <span>{item.emoji}</span>
+                    <span>
+                      <strong>{item.title}</strong>
+                      <br/>
+                      <em>{item.subtitle}</em>
+                      {item.description && (
+                        <>
+                          <br/>
+                          {item.description}
+                        </>
+                      )}
+                      {
+                        item.ingredients && (
+                          <>
+                            <br/>
+                            <strong>Ingrédients:</strong>
+                            <br/>
+                            {item.ingredients.map((ingredient,index) => (
+                              <span key={index}>
+                                {ingredient.emoji} {ingredient.description}
+                                <br/>
+                              </span>
+                            ))}
+                          </>
+                        )
+                      }
+                      <br/>
+                    </span>
+                  </p>
+                ))}
+              </div>
             <div className="text-2xl font-semibold text-white">
               {orderDetails.price} Dh
             </div>
