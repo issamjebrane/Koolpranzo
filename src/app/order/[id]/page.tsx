@@ -13,6 +13,7 @@ import {
 import Nav from '@/components/Nav';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
+import Image from 'next/image';
 
 interface OrderPageProps {
   params: {
@@ -107,10 +108,14 @@ const Order = ({ params }: OrderPageProps) => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img
+                <Image
                   src={allMedia[selectedImage]}
                   alt={`${orderDetails.title} - Main Image`}
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                  width={500}
+                  height={500}
+                  quality={75}
+                  priority
                 />
               )}
             </div>
@@ -132,20 +137,24 @@ const Order = ({ params }: OrderPageProps) => {
                 >
                   {index === allMedia.length - 1 ? (
                     <div className="w-full h-full relative bg-gray-100">
-                      <img
+                      {/* <Image
                         src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Video thumbnail"
                         className="w-full h-full object-cover"
-                      />
+                        width={100}
+                        height={100}
+                      /> */}
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                         <Play className="w-6 h-6 text-white" />
                       </div>
                     </div>
                   ) : (
-                    <img
+                    <Image
                       src={media}
                       alt={`Thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
+                      width={100}
+                      height={100}
                     />
                   )}
                 </div>
@@ -283,10 +292,12 @@ const Order = ({ params }: OrderPageProps) => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img
+                <Image
                   src={allMedia[selectedImage]}
                   alt={`${orderDetails.title} - Zoomed`}
                   className="max-w-full max-h-full object-contain"
+                  width={100}
+                  height={100}
                 />
               )}
             </div>

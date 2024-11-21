@@ -39,10 +39,13 @@ const fraunces = Fraunces({
               <div className="relative group">
                 {/* Image container with consistent aspect ratio */}
                 <div className="relative pt-[95%] overflow-hidden"> {/* 4:3 aspect ratio */}
-                  <img
+                  <Image
                     src={imgSrc}
                     alt={`${card.title} - Image ${imgIndex + 1}`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, 384px"
+                    priority={index < 2} // Prioritize loading first two images
+                    fill
                   />
                 </div>
               </div>
@@ -102,10 +105,13 @@ export default function Cards() {
               <div className="flex flex-col space-y-4">
                 {/* Image Container */}
                 <div className="relative aspect-square w-full overflow-hidden  bg-gray-100">
-                  <img
+                  <Image
                     src={card.imgSrcs[0]}
                     alt={card.title}
                     className="absolute inset-0 h-full w-full object-contain"
+                    sizes="(max-width: 768px) 100vw, 384px"
+                    priority={index < 2} // Prioritize loading first two images
+                    fill
                   />
                 </div>
                 
