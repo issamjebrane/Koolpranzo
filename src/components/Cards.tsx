@@ -1,13 +1,13 @@
 'use client'
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Fraunces } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { boxes } from '@/data/box';
 
-const fraunces = Fraunces({
+const montserrat = Montserrat({
     subsets : ['latin'],
     weight: ['400', '600'],
   })
@@ -90,7 +90,7 @@ export default function Cards() {
 
   return (
     <div className=" flex items-center justify-center overflow-hidden flex-col gap-10 py-10 bg-secondary_color" id='menu'>
-        <h1 className={'text-6xl '+ fraunces.className } >Menu</h1>
+        <h1 className={'text-6xl font-bold '+ montserrat.className } >Menu</h1>
         <div className='md:grid grid-cols-2 gap-10 hidden p-10 2xl:px-40'>
         {
             cards.map((card,index)=>(

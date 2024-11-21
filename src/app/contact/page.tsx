@@ -6,9 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Input } from '@/components/ui/input';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Fraunces } from 'next/font/google';
 import { zodResolver } from "@hookform/resolvers/zod"
-import Link from 'next/link';
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -17,10 +15,7 @@ const formSchema = z.object({
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   message: z.string().min(10, "Message must be at least 10 characters")
 })
-const fraunces = Fraunces({
-  subsets : ['latin'],
-  weight: ['400', '600'],
-})
+
 const Page = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
