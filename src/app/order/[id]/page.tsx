@@ -103,7 +103,7 @@ const Order = ({ params }: OrderPageProps) => {
                   src={allMedia[selectedImage]}
                   className="w-full h-full object-cover" 
                   controls
-                  poster="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  poster="/assets/tea_thumbnail.avif"
                 >
                   Your browser does not support the video tag.
                 </video>
@@ -137,13 +137,13 @@ const Order = ({ params }: OrderPageProps) => {
                 >
                   {index === allMedia.length - 1 ? (
                     <div className="w-full h-full relative bg-gray-100">
-                      {/* <Image
-                        src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      <Image
+                        src="/assets/tea_thumbnail.avif"
                         alt="Video thumbnail"
                         className="w-full h-full object-cover"
                         width={100}
                         height={100}
-                      /> */}
+                      />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                         <Play className="w-6 h-6 text-white" />
                       </div>
@@ -170,8 +170,7 @@ const Order = ({ params }: OrderPageProps) => {
                   <p key={index} className="flex items-start gap-2">
                     <span>{item.emoji}</span>
                     <span>
-                      <strong>{item.title}</strong>
-                      <br/>
+                      <strong className=' block'>{item.title}</strong>
                       <em>{item.subtitle}</em>
                       {item.description && (
                         <>
@@ -179,6 +178,7 @@ const Order = ({ params }: OrderPageProps) => {
                           {item.description}
                         </>
                       )}
+                                            <br/>
                       {
                         item.ingredients && (
                           <>

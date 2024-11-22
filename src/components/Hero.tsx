@@ -38,7 +38,7 @@ const Hero = () => {
     >
   <Button
       asChild
-      className="bg-[#223515] text-white px-4 w-44 md:py-2 rounded-full font-semibold hover:bg-[#94AB71]"
+      className="bg-[#223515] text-white px-4 w-44 md:py-2 rounded-none font-semibold hover:bg-[#94AB71]"
     >
       <Link href="#menu">View Menu</Link>
     </Button>

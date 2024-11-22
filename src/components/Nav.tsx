@@ -41,7 +41,7 @@ const Nav = ({pageName}: {pageName:string}) => {
           </nav>
           <Button
             asChild
-            className={`bg-primary_color text-secondary_color hover:text-primary_color px-4 py-2 rounded-full font-semibold ${
+            className={`bg-primary_color text-secondary_color hover:text-primary_color px-4 py-2 rounded-none font-semibold ${
                 pageName === 'contact' 
                   ? 'bg-secondary_color hover:bg-primary_color hover:text-secondary_color text-primary_color' 
                   : pageName === 'costum' 

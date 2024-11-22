@@ -17,10 +17,10 @@ export const boxes : Box[] = [
         "Des options saines et délicieuses pour bien commencer votre journée, préparées avec soin à partir d'ingrédients naturels et nutritifs",
         imgSrcs: [
           '/assets/koolpranzo_box.jpg',
+          '/assets/image4.jpg',
           '/assets/image1.jpg',
           '/assets/image2.jpg',
           '/assets/image3.jpg',
-          '/assets/image4.jpg',
           '/assets/image5.jpg',
         ],
         price: 65,
@@ -33,7 +33,6 @@ export const boxes : Box[] = [
           {
             emoji: "🥣",
             title: "Bol de Flocons d'Avoine",
-            subtitle: "(Notre recette spéciale)",
             description: "Un bol de flocons d'avoine garni de fruits frais, fruits secs, chocolat noir, yaourt nature, poudre de noix de coco et graines de chia. Servi froid et prêt à savourer.",
           },
           {

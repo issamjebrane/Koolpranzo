@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { boxes } from '@/data/box';
 
 const montserrat = Montserrat({
@@ -120,12 +120,13 @@ export default function Cards() {
                   <h3 className="text-lg font-semibold text-gray-900">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-gray-500 line-clamp-2">
+                  <p className="text-sm  text-gray-500 line-clamp-2">
                     {card.subtitle}
                   </p>
                   <Link 
                     href={`/order/${card.id}`}
-                    className="inline-flex items-center text-sm font-medium text-primary_color"
+                    className="inline-flex bg-primary_color  text-secondary_color hover:text-secondary_color px-4 py-2 items-center text-sm font-medium w-fit"
+                    style={{ marginTop: "30px" }}
                   >
                     Order now <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -134,7 +135,18 @@ export default function Cards() {
             </CarouselItem>
           ))}
         </CarouselContent>
-
+        <CarouselPrevious className='
+          absolute top-[-10px] left-[82%] -translate-y-1/2
+          bg-primary_color text-secondary_color rounded-none p-2
+          shadow-md
+          z-10
+        '/>
+        <CarouselNext className='
+          absolute top-[-10px] right-4 -translate-y-1/2
+          bg-primary_color text-secondary_color rounded-none p-2
+          shadow-md
+          z-10
+        '/>
       </Carousel>
     </div>
   );
