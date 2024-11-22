@@ -125,7 +125,7 @@ export default function Cards() {
                   </p>
                   <Link 
                     href={`/order/${card.id}`}
-                    className="inline-flex bg-primary_color  text-secondary_color hover:text-secondary_color px-4 py-2 items-center text-sm font-medium w-fit"
+                    className="inline-flex bg-primary_color  text-secondary_color hover:bg-secondary_color hover:text-primary_color px-4 py-2 items-center text-sm font-medium w-fit"
                     style={{ marginTop: "30px" }}
                   >
                     Order now <ArrowRight className="ml-1 h-4 w-4" />
