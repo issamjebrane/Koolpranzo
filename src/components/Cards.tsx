@@ -136,7 +136,7 @@ export default function Cards() {
           ))}
         </CarouselContent>
         <CarouselPrevious className='
-          absolute top-[-10px] left-[82%] -translate-y-1/2
+          absolute top-[-10px] left-[80%] -translate-y-1/2
           bg-primary_color text-secondary_color rounded-none p-2
           shadow-md
           z-10
