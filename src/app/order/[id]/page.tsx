@@ -259,7 +259,6 @@ const Order = ({ params }: OrderPageProps) => {
               type="submit"
               className="w-full flex items-center justify-center gap-2"
             >
-              <Phone className="h-5 w-5" />
               confirmer la commande
             </Button>
           </form>
