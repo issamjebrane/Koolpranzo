@@ -260,7 +260,7 @@ const Order = ({ params }: OrderPageProps) => {
               className="w-full flex items-center justify-center gap-2"
             >
               <Phone className="h-5 w-5" />
-              Demandez un Rappel
+              confirmer la commande
             </Button>
           </form>
         </CardContent>
