@@ -29,9 +29,9 @@ const Nav = ({pageName}: {pageName:string}) => {
           ? 'bg-secondary_color shadow-md text-primary_color' 
           : 'bg-transparent text-secondary_color'}
       `}>
-        <div className=" flex  justify-between items-center">
+        <div className=" flex justify-between items-center">
           <Link href="/">
-            <Image src="/assets/LOGO_KOOLPR.svg" alt="Logo" width={100} height={100} className='rounded-none'/>
+            <Image src="/assets/LOGO_KOOLPR.svg" alt="Logo" width={80} height={80} quality={100} className='rounded-none'/>
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-bold text-lg ">
@@ -47,7 +47,7 @@ const Nav = ({pageName}: {pageName:string}) => {
                   : pageName === 'costum' 
                   ? 'hidden' :'bg-primary_color text-secondary_color hover:text-primary_color'
               }`}          >
-            <Link href="custom">Personnalisez</Link>
+            <Link href="/custom">Personnalisez</Link>
           </Button>
         </div>
       </header>

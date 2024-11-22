@@ -14,6 +14,8 @@ import Nav from '@/components/Nav';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
+import { Label } from '@radix-ui/react-label';
+import { Switch } from '@/components/ui/switch';
 
 interface OrderPageProps {
   params: {
@@ -31,7 +33,7 @@ const Order = ({ params }: OrderPageProps) => {
     address: '',
   });
   const { toast } = useToast()
-
+  const [isChecked, setIsChecked] = useState(false);
   if (!orderDetails) {
     return <div className="min-h-screen flex items-center justify-center">Box not found</div>;
   }
@@ -65,7 +67,11 @@ const Order = ({ params }: OrderPageProps) => {
           from_name: formData.name,
           message: `Nouvelle commande:
             Téléphone: ${formData.phone}
-            Adresse: ${formData.address}`
+            Adresse: ${formData.address}
+            boxType: ${orderDetails.title}
+            sugar: ${isChecked ? 'yes' : 'no'}
+            `
+            
         },
         'JWMJl8K_9F_c5Az4c'
       );
@@ -174,11 +180,10 @@ const Order = ({ params }: OrderPageProps) => {
                       <em>{item.subtitle}</em>
                       {item.description && (
                         <>
-                          <br/>
                           {item.description}
+                          <br/>
                         </>
                       )}
-                                            <br/>
                       {
                         item.ingredients && (
                           <>
@@ -199,6 +204,16 @@ const Order = ({ params }: OrderPageProps) => {
                   </p>
                 ))}
               </div>
+              <div className="flex text-secondary_color font-medium text-xl items-center space-x-2">
+              <Switch
+                      onCheckedChange={()=>{
+                        setIsChecked(!isChecked)
+                      }}
+
+                    />
+
+                  <Label htmlFor="airplane-mode">with sugar?</Label>
+                </div>
             <div className="text-2xl font-semibold text-white">
               {orderDetails.price} Dh
             </div>

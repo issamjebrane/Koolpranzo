@@ -90,11 +90,10 @@ html {
 
 @media (max-width: 1240px) {
   .main {
-    background-image: url(/assets/mini_desktop.svg);
-
+    background: url(/assets/mobile.svg) no-repeat center;
   }
 }
 
 .main{
-  background-image: url(/assets/desktop.png);
+  background: url(/assets/desktop.png) cover center no-repeat ;
 }

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
 
-<section className="flex flex-col  md:items-left justify-center  min-h-screen px-6 font-medium">
+<section className="flex flex-col main md:items-left justify-center  min-h-screen px-6 font-medium">
   {/* Animated Heading */}
   <motion.h1
     initial={{ opacity: 0, y: -20 }}
@@ -25,10 +25,10 @@ const Hero = () => {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.3, duration: 0.8 }}
-    className="text-lg md:text-xl mt-4 max-w-2xl text-white font-medium"
+    className="text-lg md:text-xl mt-4 max-w-2xl text-white font-semibold"
   >
-    Indulge in our handcrafted brunch boxes, packed with fresh pastries 
-    and seasonal delights. A perfect slice of happiness delivered to you.
+    "Indulge in our handcrafted brunch boxes, packed with fresh pastries 
+    and seasonal delights. A perfect slice of happiness delivered to you."
   </motion.p>
   <motion.button           
     initial={{ opacity: 0, y: 20 }}
