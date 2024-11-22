@@ -27,8 +27,8 @@ const Hero = () => {
     transition={{ delay: 0.3, duration: 0.8 }}
     className="text-lg md:text-xl mt-4 max-w-2xl text-white font-semibold"
   >
-    "Indulge in our handcrafted brunch boxes, packed with fresh pastries 
-    and seasonal delights. A perfect slice of happiness delivered to you."
+    &quot;Indulge in our handcrafted brunch boxes, packed with fresh pastries 
+    and seasonal delights. A perfect slice of happiness delivered to you.&quot;
   </motion.p>
   <motion.button           
     initial={{ opacity: 0, y: 20 }}
