@@ -31,7 +31,7 @@ const Nav = ({pageName}: {pageName:string}) => {
       `}>
         <div className=" flex  justify-between items-center">
           <Link href="/">
-            <Image src="/assets/LOGO_KOOLPR.svg" alt="Logo" width={80} height={80} className="rounded-full"/>
+            <Image src="/assets/LOGO_KOOLPR.svg" alt="Logo" width={100} height={100} className='rounded-none'/>
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-bold text-lg ">
