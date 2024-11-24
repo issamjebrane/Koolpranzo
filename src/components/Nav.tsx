@@ -35,9 +35,9 @@ const Nav = ({pageName}: {pageName:string}) => {
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-bold text-lg ">
-            <Link href="about"  className="hover:border-b-primary_color border-2 border-transparent">About</Link>
+            <Link href="/about"  className="hover:border-b-primary_color border-2 border-transparent">About</Link>
             <Link href="#menu" className="hover:border-b-primary_color border-2 border-transparent">Menu</Link>
-            <Link href="contact" className="hover:border-b-primary_color border-2 border-transparent">Contact</Link>
+            <Link href="/contact" className="hover:border-b-primary_color border-2 border-transparent">Contact</Link>
           </nav>
           <Button
             asChild
