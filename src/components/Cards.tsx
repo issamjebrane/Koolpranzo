@@ -38,7 +38,7 @@ const montserrat = Montserrat({
             <CarouselItem key={imgIndex}>
               <div className="relative group">
                 {/* Image container with consistent aspect ratio */}
-                <div className="relative pt-[95%] overflow-hidden"> {/* 4:3 aspect ratio */}
+                <div className="relative  overflow-hidden"> {/* 4:3 aspect ratio */}
                   <Image
                     src={imgSrc}
                     alt={`${card.title} - Image ${imgIndex + 1}`}
@@ -71,10 +71,10 @@ const montserrat = Montserrat({
           {card.subtitle}
         </p>
         <Link href={`/order/${card.id}`}>
-        <button className="flex items-center space-x-2 text-sm md:text-base font-medium text-primary_color hover:text-primary_color/80 transition-colors">
-          <span>Order now</span>
-          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
-        </button>
+          <button className="flex items-center space-x-2 text-sm md:text-base font-medium text-primary_color hover:text-primary_color/80 transition-colors">
+            <span>Order now</span>
+            <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+          </button>
         </Link>
       </motion.div>
     </motion.div>

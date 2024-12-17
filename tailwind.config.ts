@@ -19,7 +19,7 @@ const config: Config = {
 			  'desktop': "url('/assets/desktop.png')",
 			  'mini-desktop': "url('/assets/mini_desktop.png')",
 			  'tablet': "url('/assets/tablet.png')",
-			  'mobile': "url('/assets/mobile.png')",
+			  'mobile': "url('/assets/mobile.svg')",
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
